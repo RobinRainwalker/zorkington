@@ -31,6 +31,6 @@ function check_state_transition(text) {
   }
 }
 
-console.log(current_state[0].value)
+console.log(current_state[0])
 
 change_state()
