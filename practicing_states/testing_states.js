@@ -13,7 +13,6 @@ function enter_state(new_state) {
   } else {
     console.log("ya hecked up trynna move from " + current_state + " to " + new_state);
   }
-
 }
 
 
