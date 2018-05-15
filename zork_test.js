@@ -16,13 +16,15 @@ function select_room() {
     // console.log("user input " + user_input + " from select room function")
     // check_valid_transition(user_input)
     change_room(user_input)
-    console.log(current_room + " current room")
+    console.log("you are currently standing in " + current_room)
+    console.log("you can move into the " + cozy_home_rooms[current_room].can_move_to)
+
   })
 
   // console.log("user input from AFTER check valid tansition " + user_input)
 }
 
-// function check_valid_transition(attempted_room_transition) {
+function check_valid_transition(attempted_room_transition) {
   console.log("user input from DURING check valid transition " + user_input)
   if (attempted_room_transition === "living room") {
     console.log("attempting to move from " + current_room + " to " + cozy_home_rooms[current_room].can_move_to);
