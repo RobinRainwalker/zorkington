@@ -13,11 +13,11 @@ function select_room() {
   process.stdin.once('data', (a) => {
     user_input = a.toString().trim();
     console.log("user input " + user_input + " from select room function")
+    check_valid_transition(user_input)
   })
-  // check_valid_transition(user_input)
+
+  console.log("user input from AFTER check valid tansition " + user_input)
 }
-
-
 
 select_room()
 
@@ -26,6 +26,7 @@ function change_room(new_room) {
 }
 
 function check_valid_transition(attempted_room_transition) {
+  console.log("user input from DURING check valid transition " + user_input)
   if (attempted_room_transition === "living room") {
     console.log("attempting to move from " + current_room + " to " + cozy_home_rooms[current_room].can_move_to);
   } else if (attempted_room_transition === "mudroom") {
