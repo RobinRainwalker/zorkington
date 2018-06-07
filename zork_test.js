@@ -36,15 +36,23 @@ function select_room() {
     change_room(user_input)
     where_am_i()
 	room_contains()
+	interact(user_input)
   })
 }
 
-//function interact
+function interact(inp) {
+	if (cozy_home_rooms[current_room].objects == undefined)  {
+		return 
+		} else if (inp == cozy_home_rooms[current_room].objects.actions) {
+			console.log("you " + cozy_home_rooms[current_room].objects.actions)
+		}
+}
 
 function room_contains() {
 	if (cozy_home_rooms[current_room].contains == undefined) {
 		return
 	} else {
+		// console.log(cozy_home_rooms[current_room].objects.contains)
 	// cozy_home_rooms[current_room].objects.description.forEach(function(element){console.log(element);})
 }
 	console.log("as you enter this room, you notice " + cozy_home_rooms[current_room].contains)
