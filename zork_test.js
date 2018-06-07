@@ -1,6 +1,10 @@
 let cozy_home_rooms = {
   "mudroom": {
-		can_move_to: ["living room"]
+		can_move_to: ["living room"],
+		contains: ["carhardt jacket"],
+		objects: {
+			name: ["jacket", "coat"]
+			}
 		},
   "living room": {
 		can_move_to: ["mudroom", "kitchen"], 
@@ -29,12 +33,13 @@ function introduction() {
 }
 introduction()
 
+interact()
+
 function select_room() {
   process.stdin.on('data', (a) => {
     user_input = a.toString().trim();
     change_room(user_input)
     where_am_i()
-	room_contains()
 	interact(user_input)
   })
 }
