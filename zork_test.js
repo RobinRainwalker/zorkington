@@ -32,7 +32,6 @@ introduction()
 function select_room() {
   process.stdin.on('data', (a) => {
     user_input = a.toString().trim();
-    // check_valid_transition(user_input)
     change_room(user_input)
     where_am_i()
 	room_contains()
@@ -48,12 +47,11 @@ function interact(inp) {
 		}
 }
 
+
 function room_contains() {
 	if (cozy_home_rooms[current_room].contains == undefined) {
 		return
 	} else {
-		// console.log(cozy_home_rooms[current_room].objects.contains)
-	// cozy_home_rooms[current_room].objects.description.forEach(function(element){console.log(element);})
 }
 	console.log("as you enter this room, you notice " + cozy_home_rooms[current_room].contains)
 	
