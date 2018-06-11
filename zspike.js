@@ -42,7 +42,7 @@ Room.prototype.action = function() {
 //~ newRoom.action()
 
 var o = new Object();
-o.test = "testes"
+o.test = "testing"
 
 let newestRoom = new Room(o, 282, "hurpadurp")
 console.log(newestRoom)
