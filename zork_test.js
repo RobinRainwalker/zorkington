@@ -38,7 +38,7 @@ function introduction() {
   console.log("you can move into the " + cozy_home_rooms[current_room].can_move_to)
 }
 
-function select_room() {
+function play_game() {
   process.stdin.on('data', (a) => {
     user_input = a.toString().trim();
     change_room(user_input)
@@ -54,7 +54,6 @@ function interact(inp) {
 			console.log(cozy_home_rooms[current_room].objects.user_action_display)
 		}
 }
-
 
 function room_contains() {
 	if (cozy_home_rooms[current_room].contains == undefined) {
@@ -80,4 +79,4 @@ function change_room(new_room) {
   }
 }
 
-select_room()
+play_game()
