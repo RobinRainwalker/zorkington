@@ -6,7 +6,7 @@ let location = {
 				usage: ["read", "inspect", "examine" ],
 				description: function() {console.log("The sign says 'Welcome to Burlington Code Academy! Come on up to the second floor. If the door is locked, use the code 12345'")}
 				},
-			"test": "TESTES",
+			"test": "TEST",
 			"testing": "TESTING"
 			},
 		can_move_to: ["Foyer"]
@@ -29,6 +29,8 @@ let current_room = "182 Main St"
 
 //~ console.log(Object.keys(location[current_room]["items"]))
 
+location[current_room].description()
+
 function start() {
 	process.stdin.on('data', (chunk) => {
 		user_input = chunk.toString().trim();
@@ -38,22 +40,44 @@ function start() {
 	})
 }
 
+let item
+let action
+
 function parse_input(inp) {
+	
+	
+	
 	input = inp.toLowerCase();
+	
 	items = Object.keys(location[current_room]["items"]) //this is an array
+
+	items.forEach(function(e) {
+		if (input.includes(e)) {
+			item = e
+			}
+		})
 	
-	if (items.includes(input) === true) {
-		console.log("i think u used " + items)
-		}
+	if (item !== undefined && input.includes(location[current_room]["items"][item])) {
+		
+	let actions = location[current_room]["items"][item]["usage"]
 	
-	
-	//~ if (input.includes(location[current_room].items))
-	//~ if(input) {
-	
-	//~ } 
-	else {
-	console.log("Sorry, I don't know how to " + input)
+	actions.forEach(function(e) {
+		if (input.includes(e)) {
+			action = e
+			} else { 
+				action = false
+			}
+		})
+		console.log(actions + "ACTIONS")
 	}
+	
+	
+	console.log(item + " item")
+	console.log(action + " action")
+
+	//~ else {
+	//~ console.log("Sorry, I don't know how to " + input)
+	//~ }
 }
 
 start()
