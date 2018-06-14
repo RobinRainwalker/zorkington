@@ -11,7 +11,11 @@ let location = {
 		description: function() {console.log("182 Main St.\nYou are standing on Main Street between Church and South Winooski\nThere is a door here. A keypad sits on the handle.\nOn the door is a handwritten sign.") },
 		"items": {
 			"sign": {
-				usage: ["read", "inspect", "examine" ],
+				usage: {
+					"read": ["read", "inspect", "examine"]
+					"used": false
+					"use": function() {console.log()}
+					},
 				description: function() {console.log("The sign says 'Welcome to Burlington Code Academy! Come on up to the second floor. If the door is locked, use the code 12345'")}
 				},
 			"test": {
