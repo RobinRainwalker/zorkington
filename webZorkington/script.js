@@ -17,7 +17,8 @@ function move() {
     terminalOutput.innerHTML = rooms['move']
 }
 
-
+var test = document.getElementById('test')
+test.addEventListener("onclick", move())
 
 
 // listenForCommand();
